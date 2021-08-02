@@ -44,7 +44,6 @@ export default function UrlShortenerApp () {
     const req = await postUrl(input)
     if (req.ok) {
       const res = await req.json()
-      console.log(res)
       setIcon('fas fa-check-double')
       setLoading(false)
       setTimeout(() => {
