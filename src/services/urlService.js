@@ -1,4 +1,4 @@
-const server = 'http://localhost:8080/api/v1/quick-access'
+const server = 'https://url-shortener-pipe.herokuapp.com/api/v1/quick-access'
 export const postUrl = async (url) => {
   const req = await fetch(server, {
     method: 'POST',
