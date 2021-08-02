@@ -74,12 +74,12 @@ export default function UrlShortenerApp () {
           <TitleModal color={error ? 'red' : 'green'}>{msg}</TitleModal>
         </Modal>}
       <Header>
-        <h3 style={{ fontFamily: '"MonteCarlo", cursive' }}>drop.je</h3>
+        <h3 style={{ fontFamily: '"MonteCarlo", cursive' }}>drop</h3>
         <p>About</p>
         <p>Github</p>
       </Header>
       <TitleSection>
-        <Title>drop.je</Title>
+        <Title>drop</Title>
         <Text>
           Most link shorteners do too much.
         </Text>

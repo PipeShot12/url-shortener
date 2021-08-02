@@ -4,14 +4,14 @@ import mediaQuery from '../../mediaQuery'
 export default function ClipBoard ({ urlShort }) {
   const handleCopy = () => {
     if (urlShort) {
-      navigator.clipboard.writeText(`host/${urlShort}`)
+      navigator.clipboard.writeText(`drop-shortener.netlify.app/${urlShort}`)
     }
   }
   return (
     <CopyClipBoard onClick={handleCopy} background={urlShort}>
       <TextClipBoard>{urlShort
-        ? `localhost:3000/${urlShort}`
-        : 'localhost:3000/<your-url>'}
+        ? `drop-shortener.netlify.app/${urlShort}`
+        : 'drop-shortener.netlify.app/<your-url>'}
       </TextClipBoard>
       <i className='fas fa-copy' style={{ width: '5%', fontSize: '25px' }} />
     </CopyClipBoard>
