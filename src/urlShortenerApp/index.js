@@ -145,7 +145,7 @@ position:absolute;
 bottom: 0;
 background-size: cover;
 background-repeat: no-repeat;
-@media (min-width:700px ) and (max-width: 900px){
+@media (min-width:700px ) and (max-width: 1000px){
   display: none;
 }
 
