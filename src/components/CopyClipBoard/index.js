@@ -13,7 +13,7 @@ export default function ClipBoard ({ urlShort }) {
         ? `drop-shortener.netlify.app/${urlShort}`
         : 'drop-shortener.netlify.app/<your-url>'}
       </TextClipBoard>
-      <i className='fas fa-copy' style={{ width: '5%', fontSize: '25px' }} />
+      <IconCopy className='fas fa-copy' />
     </CopyClipBoard>
   )
 }
@@ -38,7 +38,12 @@ const TextClipBoard = styled.p`
 width:100%;
 color:var(--text);
 margin: 0;
+font-size: 0.7em ;
 text-align: center;
 font-weight: bold;
 text-align: center;
+`
+const IconCopy = styled.i`
+ width: 5%;
+ font-size: 0.8em;
 `
