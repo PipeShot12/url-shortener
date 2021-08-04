@@ -6,7 +6,7 @@ export default function FormInput ({ onSubmit }) {
   const handleSubmit = e => {
     e.preventDefault()
     setInput('')
-    onSubmit(input?.replace(/\/|\s/g,""))
+    onSubmit(input?.trim())
   }
   return (
     <Form onSubmit={handleSubmit}>
