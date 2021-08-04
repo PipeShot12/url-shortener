@@ -1,11 +1,10 @@
 import { postUrl, getUrl } from '../services/urlService'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import bg from '../assets/bgPink.png'
 import ClipBoard from '../components/CopyClipBoard'
 import FormInput from '../components/FormInput'
 import Modal from '../Modal/'
-import styled from 'styled-components'
+import { Container, Header, TitleSection, Title, Text, Background} from '../commonStyles/'
 
 export default function UrlShortenerApp () {
   const [error, setError] = useState(false)
@@ -68,10 +67,16 @@ export default function UrlShortenerApp () {
   return (
     <Container>
       {showModal &&
-        <Modal onClose={() => setShowModal(false)}>
-          <IconModal className={loading ? 'fas fa-spinner fa-spin' : icon} color={error ? 'red' : 'green'} />
-          <TitleModal color={error ? 'red' : 'green'}>{msg}</TitleModal>
-        </Modal>}
+        <Modal 
+        onClose={() => setShowModal(false)}
+        icon={loading ? 'fas fa-spinner fa-spin' : icon}
+        color={error ? 'red' : 'green'}
+        iconSize='4em'
+
+        titleSize='3em'
+        titleColor={error ? 'red' : 'green'}
+        titleText={msg}
+        />}
       <Header>
         <h3 style={{ fontFamily: '"MonteCarlo", cursive' }}>drop</h3>
         <p>About</p>
@@ -93,68 +98,3 @@ export default function UrlShortenerApp () {
 
   )
 }
-
-const Container = styled.div`
-min-height: 100vh;
-width:100%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-position:relative;
-padding:0;
-margin:0;
-font-size: calc(10px + 2vmin);
-`
-const Header = styled.div`
-display:flex;
-width: 80%;
-justify-content: space-around;
-align-items: center;
-line-height: 0px;
-position: fixed;
-top: 0;
-left: 10%;
-`
-const TitleSection = styled.div`
-text-align:center;
-width: 90%;
-`
-const Title = styled.h1`
-color:var(brand);
-font-family: 'MonteCarlo', cursive;
-margin: 0;
-padding: 0;
-font-size: 4em;
-line-height: 1em;
-margin-bottom: 0.2em;
-`
-const Text = styled.p`
-color:var(--text);
-margin: 0;
-text-align: center;
-font-weight: bold;
-`
-
-const Background = styled.div`
-background-image:url(${bg});
-z-index: 10;
-width:100vw;
-height: 18vh;
-position:absolute;
-bottom: 0;
-background-size: cover;
-background-repeat: no-repeat;
-@media (min-width:700px ) and (max-width: 1000px){
-  display: none;
-}
-
-`
-const IconModal = styled.i`
-color:${({ color }) => color};
-font-size:4em;
-`
-const TitleModal = styled(Title)`
-color: ${({ color }) => color};
-font-size: 3em;
-`
